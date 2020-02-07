@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -fsanitize=address -fno-omit-frame-pointer -O1 -g
 
-objects = sort.o insertionsort.o mergesort.o
+objects = sort.o insertionsort.o mergesort.o heapsort.o
 
 sort : $(objects)
 	$(CC) -o sort $(CFLAGS) $(objects)

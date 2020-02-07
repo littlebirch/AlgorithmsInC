@@ -28,9 +28,12 @@ int main(int argc,char** argv)
         case 2:
             pSort = mergeSort;
             break;
+        case 3:
+            pSort = heapSort;
+            break;
         default:
             printf("unsupported sorting method!\n");
-            break;
+            return 0;
     }
 
     pNumArray = malloc(sizeof(int)*number);
@@ -42,20 +45,12 @@ int main(int argc,char** argv)
         pNumArray[i] = random();
     }
 
-    #if 0
-    for(int i=0;i<number;i++) {
-        printf("%d\n",pNumArray[i]);
-    }
-    #endif
-
-    //pSort = mergeSort;
     if(pSort(pNumArray,number) < 0) {
         printf("sort error!\n");
         free(pNumArray);
         return 0;
     }
 
-    //printf("The sorted array is as follows!\n");
     for(int i=0;i<number;i++) {
         printf("%d\n",pNumArray[i]);
     }
